@@ -4,7 +4,7 @@ const board = new Board()
 board.on("ready", () => {
   const sensor = new Sensor("A0")
 
-  sensor*(5/1023, function() {
-      console.log(this.value)
+  sensor.on("chnage", function() {
+      console.log((this.value)*(5/1023))
   })
 })
