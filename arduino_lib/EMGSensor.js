@@ -7,4 +7,5 @@ board.on("ready", () => {
   sensor.on("change", function () {
     console.log(this.value)
   })
+
 })
