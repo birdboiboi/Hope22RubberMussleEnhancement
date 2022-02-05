@@ -6,7 +6,7 @@ board.on("ready", () => {
 
   sensor.on("change", function () {
     console.log(this.scaleTo(0,10));
-    if 
+     
   });
   
 });
