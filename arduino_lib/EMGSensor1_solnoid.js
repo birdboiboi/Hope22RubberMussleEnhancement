@@ -21,17 +21,20 @@ board.on("ready", function(){
   
 
   sensorForearm.on("change", function () {
-    console.log(this.value);
-    liftRelay.toggle();
-    if (state_lift == "up"){
-      state_lift = "down";
-    }else{
-      state_lift = "up";
-    }
+    console.log(this.Scale(0,50));
+    var val = this.Scale(0,50)
+    if (val > 25){
+      liftRelay.toggle();
+      if (state_lift == "up"){
+        state_lift = "down";
+      }else{
+        state_lift = "up";
+      }
 
-    console.log(state_lift)
-    setTimeout(() => {console.log("delay start")}, 1000);
-    console.log("lift sensor ready")
+      console.log(state_lift)
+      
+      console.log("lift sensor ready")
+  }
   });
 
 
