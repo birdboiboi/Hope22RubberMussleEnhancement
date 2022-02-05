@@ -21,7 +21,7 @@ board.on("ready", function(){
   
 
   sensorForearm.on("change", function () {
-    console.log(this.scaleTo(0,50));
+    console.log(this.value);
     var val = this.value;
     if (val > 100){
       liftRelay.toggle();
