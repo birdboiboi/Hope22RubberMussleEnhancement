@@ -4,7 +4,7 @@ const board = new Board()
 board.on("ready", () => {
   const sensor = new Sensor({
     pin: "A0",
-    threshold: 100,
+    threshold: 150,
   });
 
   sensor.on("change", function () {
