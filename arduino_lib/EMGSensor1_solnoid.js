@@ -6,7 +6,10 @@ var old_contract = false;
 var state_lift = "up";
 
 board.on("ready", function(){
-  const sensorForearm = new five.Sensor("A0")
+  const sensorForearm = new five.Sensor({
+                                          pin:"A0",
+                                          threshold:90,
+                                        });
   var liftRelay = new five.Relay(13);
   var liftRelay = new five.Relay(12);
 
@@ -16,20 +19,19 @@ board.on("ready", function(){
 
   });
   
-  sensorForearm.within([100, 150], function(){
+
+  sensorForearm.on("change", function () {
     console.log(this.value);
-    if(contract != old_contract){
-      old_contract  = contract;
+    liftRelay.toggle();
+    if (state_lift == "up"){
+      state_lift = "down";
     }else{
-      contract = ! contract;
-      liftRelay.toggle();
-      if (state_lift == "up"){
-        state_lift = "down";
-      }else{
-        state_lift = "up";
-      }
-      console.log(state_lift)
+      state_lift = "up";
     }
+
+    console.log(state_lift)
+    setTimeout(() => {console.log("delay start")}, 1000);
+    console.log("lift sensor ready")
   });
 
 
