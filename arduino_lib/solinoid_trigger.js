@@ -7,7 +7,7 @@ const port = 8080
 board.on("ready", function(){
     var led = new five.Led(13);
     led.on();
-
+    console.log(this.repl);
     this.repl.inject({
         led: led
       });
