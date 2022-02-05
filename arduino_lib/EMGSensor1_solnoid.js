@@ -8,7 +8,7 @@ var state_lift = "up";
 board.on("ready", function(){
   const sensorForearm = new five.Sensor({
                                           pin:"A0",
-                                          threshold:90,
+                                          threshold:50,
                                         });
   var liftRelay = new five.Relay(13);
   var liftRelay = new five.Relay(12);
@@ -23,7 +23,7 @@ board.on("ready", function(){
   sensorForearm.on("change", function () {
     console.log(this.scaleTo(0,50));
     var val = this.scaleTo(0,50)
-    if (val > 25){
+    if (val > 10){
       liftRelay.toggle();
       if (state_lift == "up"){
         state_lift = "down";
