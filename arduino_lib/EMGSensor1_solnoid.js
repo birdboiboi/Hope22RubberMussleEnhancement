@@ -6,15 +6,17 @@ var old_contract = false;
 var state_lift = "up";
 
 board.on("ready", function(){
-  const sensor = new five.Sensor("A0")
+  const sensorForearm = new five.Sensor("A0")
   var liftRelay = new five.Relay(13);
   var liftRelay = new five.Relay(12);
 
   this.repl.inject({
-    lift: liftRelay
-  });
+    lift: liftRelay,
+    sensor: sensorForearm
 
-  sensor.within([100, 150], function(){
+  });
+  
+  sensorForearm.within([100, 150], function(){
     console.log(this.value);
     if(contract != old_contract){
       old_contract  = contract;
