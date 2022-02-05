@@ -6,5 +6,5 @@ board.on("ready", () => {
   var floatVoltage
   floatVoltage = sensor*(5.0/1023.0)
   //sensor.within([100, 150], function(){
-      console.log("Amplify Finger Movement")
+      console.log(this.Value)
   })
