@@ -6,7 +6,7 @@ board.on("ready", function() {
     pin: "A7",
     freq : 1000
   });
-  var relay = new five.Relay(12);
+  var relay = new five.Relay(9);
 
   sensor.on("change", function () {
     console.log(this.value);
