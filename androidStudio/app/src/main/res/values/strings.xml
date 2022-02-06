@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MakeMITAPPV1</string>
+    <string name="open_grip">Open Grip</string>
+    <string name="close_grip">Close Grip</string>
+    <string name="extend_arm">Extend Arm</string>
+    <string name="retract_arm">Retract Arm</string>
+    <string name="port">Port</string>
+    <string name="ip_address">IP Address</string>
+    <string name="_5000">5000.</string>
+    <string name="_10_0_0_1">10.0.0.1</string>
+</resources>

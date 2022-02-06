@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#334856"
+    tools:context=".manualcontrol">
+
+    <Button
+        android:id="@+id/open_grip"
+        android:layout_width="166dp"
+        android:layout_height="136dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="28dp"
+        android:layout_toStartOf="@+id/close_grip"
+        android:text="@string/open_grip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/extend" />
+
+    <Button
+        android:id="@+id/close_grip"
+        android:layout_width="166dp"
+        android:layout_height="136dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="21dp"
+        android:text="@string/close_grip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toEndOf="@+id/extend"
+        app:layout_constraintTop_toBottomOf="@+id/retract" />
+
+    <Button
+        android:id="@+id/retract"
+        android:layout_width="164dp"
+        android:layout_height="196dp"
+        android:layout_above="@+id/close_grip"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="122dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="-20dp"
+        android:layout_toEndOf="@+id/extend"
+        android:text="@string/retract_arm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toEndOf="@+id/extend"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <Button
+        android:id="@+id/extend"
+        android:layout_width="165dp"
+        android:layout_height="203dp"
+        android:layout_above="@+id/open_grip"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="117dp"
+        android:layout_marginBottom="-22dp"
+        android:text="@string/extend_arm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <EditText
+        android:id="@+id/IPAddress"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/open_grip"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="266dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/_10_0_0_1"
+        android:textColor="#26C6DA"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/portNumber"
+        android:layout_width="69dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/close_grip"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="65dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/_5000"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#26C6DA" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="484dp"
+        android:layout_marginEnd="271dp"
+        android:text="@string/ip_address"
+        android:textColor="#26C6DA" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="483dp"
+        android:layout_marginEnd="90dp"
+        android:text="@string/port"
+        android:textColor="#26C6DA" />
+
+</RelativeLayout>
