@@ -14,9 +14,10 @@ board.on("ready", function() {
 
     if (val > 300){
         open = true;
-        relay.open();
+        //relay.toggle();
       }else{
         //relay.close();
+        relay.toggle();
         open = false;
       }
     });
