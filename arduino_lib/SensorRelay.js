@@ -12,7 +12,7 @@ board.on("ready", function() {
     console.log(this.value);
     var val = this.value;
 
-    if (val > 300){
+    if (val > 100){
         open = true;
         relay.toggle();
       }else{
