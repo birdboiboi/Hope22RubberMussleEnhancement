@@ -37,8 +37,6 @@ board.on("ready", function() {
         
           }
     });
-      this.repl.inject({
-          relay: relay  
-    })
+   
   });
 });
