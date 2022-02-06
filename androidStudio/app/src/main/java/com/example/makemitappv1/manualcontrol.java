@@ -51,7 +51,15 @@ public class manualcontrol extends AppCompatActivity {
         biceptRet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //networkManager("Bicept,0");
+                EditText text = (EditText) findViewById(R.id.IPAddress);
+                String ipaddr = text.getText().toString();
+                EditText num = (EditText) findViewById(R.id.portNumber);
+                int port = Integer.parseInt(num.getText().toString());
+                //System.out.println(ipaddr + String.valueOf(port) + msg);
+                NM.setPortIP(ipaddr,port);
+
+                NM.execute("bicept,1");
+
             }
         });
 
@@ -59,7 +67,15 @@ public class manualcontrol extends AppCompatActivity {
         forearmExt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //networkManager("Forearm,1");
+                EditText text = (EditText) findViewById(R.id.IPAddress);
+                String ipaddr = text.getText().toString();
+                EditText num = (EditText) findViewById(R.id.portNumber);
+                int port = Integer.parseInt(num.getText().toString());
+                //System.out.println(ipaddr + String.valueOf(port) + msg);
+                NM.setPortIP(ipaddr,port);
+
+                NM.execute("forearm,0");
+
             }
         });
 
@@ -67,7 +83,15 @@ public class manualcontrol extends AppCompatActivity {
         forearmRet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //networkManager("Forearm,0");
+                EditText text = (EditText) findViewById(R.id.IPAddress);
+                String ipaddr = text.getText().toString();
+                EditText num = (EditText) findViewById(R.id.portNumber);
+                int port = Integer.parseInt(num.getText().toString());
+                //System.out.println(ipaddr + String.valueOf(port) + msg);
+                NM.setPortIP(ipaddr,port);
+
+                NM.execute("forearm,1");
+
             }
         });
 
