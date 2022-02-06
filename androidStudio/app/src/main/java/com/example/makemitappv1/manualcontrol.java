@@ -19,12 +19,8 @@ public class manualcontrol extends AppCompatActivity {
     private Button biceptRet;
     private Button forearmExt;
     private Button forearmRet;
+    private NetworkManager NM;
 
-    private Socket socket= null;
-    private DataOutputStream out = null;
-
-    private String ipaddr;
-    private int port;
 
 
     @Override
@@ -32,11 +28,22 @@ public class manualcontrol extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manualcontrol);
 
+         NM = new NetworkManager();
+
+
+
         biceptExt = (Button) findViewById(R.id.extend);
         biceptExt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                networkManager("Bicept,1");
+                EditText text = (EditText) findViewById(R.id.IPAddress);
+                String ipaddr = text.getText().toString();
+                EditText num = (EditText) findViewById(R.id.portNumber);
+                int port = Integer.parseInt(num.getText().toString());
+                //System.out.println(ipaddr + String.valueOf(port) + msg);
+                NM.setPortIP(ipaddr,port);
+
+                NM.execute("bicept,0");
             }
         });
 
@@ -44,7 +51,7 @@ public class manualcontrol extends AppCompatActivity {
         biceptRet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                networkManager("Bicept,0");
+                //networkManager("Bicept,0");
             }
         });
 
@@ -52,7 +59,7 @@ public class manualcontrol extends AppCompatActivity {
         forearmExt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                networkManager("Forearm,1");
+                //networkManager("Forearm,1");
             }
         });
 
@@ -60,57 +67,11 @@ public class manualcontrol extends AppCompatActivity {
         forearmRet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                networkManager("Forearm,0");
+                //networkManager("Forearm,0");
             }
         });
 
 
     }
-
-    private void networkManager(String msg) {
-        // establish a connectio
-
-        EditText text = (EditText)findViewById(R.id.IPAddress);
-        ipaddr = text.getText().toString();
-
-        EditText num = (EditText)findViewById(R.id.portNumber);
-        port = Integer.parseInt(num.getText().toString());
-        System.out.println(ipaddr +  String.valueOf(port)+ msg);
-        try {
-            socket = new Socket(ipaddr, port);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Connected");
-
-        OutputStream outputStream = null;
-        try {
-            outputStream = socket.getOutputStream();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        out = new DataOutputStream(outputStream);
-        try {
-            out.writeUTF(msg);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            out.flush(); // send the message
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            out.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            socket.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
 
 }
