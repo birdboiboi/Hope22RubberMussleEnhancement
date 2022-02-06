@@ -11,7 +11,7 @@ board.on("ready", function() {
   sensor.on("change", function () {
     console.log(this.value);
     var val = this.value;
-    if (val > 200){
+    if (val > 100){
       relay.close()
     }
      else{
