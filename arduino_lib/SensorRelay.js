@@ -24,7 +24,7 @@ board.on("ready", function() {
       
     
       }
-
+      });
       sensor2.on("change", function () {
         console.log(this.value);
         var val2 = this.value;
@@ -36,7 +36,7 @@ board.on("ready", function() {
           
         
           }
-    });
+   
    
   });
 });
