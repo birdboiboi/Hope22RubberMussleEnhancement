@@ -8,14 +8,20 @@ board.on("ready", function() {
   sensor.on("change", function () {
     console.log(this.value);
     var val = this.value;
-    
+    function sleep(ms) {
+      return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+      });
+    }
+    async function init(){
     if (val > 200){
       relay.close()
+      await sleep(3000);
     }
       else{
-        setTimeout(()=> {relay.open();},5000);
+      relay.open()
       }
-      
+    }  
     
     });
       this.repl.inject({
