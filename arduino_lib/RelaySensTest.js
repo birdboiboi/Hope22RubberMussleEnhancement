@@ -11,7 +11,9 @@ board.on("ready", function() {
 
     if (val > 200){
       relay.open()
-      setTimeout(relay.close(),3000)
+      setTimeout(function() {
+        relay.close();
+    }, 3000);
       }
     
     });
