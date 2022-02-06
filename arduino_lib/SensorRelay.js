@@ -4,7 +4,7 @@ var board = new five.Board();
 board.on("ready", function() {
   var sensor = new five.Sensor(
                                 {pin:"A0",
-                                  threshold:50    })
+                                  threshold:100    })
   var relay = new five.Relay(13);
   var setDelay = false;
   var open = false;
@@ -12,7 +12,7 @@ board.on("ready", function() {
     console.log(this.value);
     var val = this.value;
 
-    if (val > 150){
+    if (val > 200){
         open = true;
         //relay.toggle();
         relay.toggle();
