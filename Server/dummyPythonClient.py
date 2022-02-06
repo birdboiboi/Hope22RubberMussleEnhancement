@@ -6,10 +6,10 @@ import socket
 s = socket.socket()        
  
 # Define the port on which you want to connect
-port = 8080               
+port = 8080         
  
 # connect to the server on local computer
-s.connect(('10.0.0.29', port))
+s.connect(('192.168.53.48', port))
  
 # receive data from the server and decoding to get the string.
 print (s.recv(1024).decode())
