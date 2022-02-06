@@ -9,12 +9,18 @@ board.on("ready", function() {
     console.log(this.value);
     var val = this.value;
 
-    if (val > 500){
-      relay.open()
+    if (val > 400){
+      setInterval(() => {
+        relay.open();
+      }, 1500);
+      
       }else{
-        relay.close()
+        setInterval(() => {
+          relay.close();
+        }, 1500);
       }
     });
+
       this.repl.inject({
           relay: relay
      
