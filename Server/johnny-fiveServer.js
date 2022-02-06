@@ -26,22 +26,32 @@ var server = net.createServer(function(connection) {
  
     connection.on('data', function(message) {
      console.log(message.toString());
-     message = message.toString();
-     switch (message){
-         case "isbicept,0":
-             console.log("bicept contract");
+
+     tempMessage = message.toString()
+     tempMsg = tempMessage.charAt(2);
+     console.log(tempMsg)
+
+     tempMsg = parseInt(tempMsg.toString())
+     console.log(tempMsg==="bicept0".normalize());
+     switch (tempMsg){
+         case 1:
+             console.log("bicept contract".normalize());
              relayBicept.open();
-         case "isbicept,1":
-             console.log("bicept expand");
+             break;
+         case 2:
+             console.log("bicept expand".normalize());
              relayBicept.close();
-         case "forearm,0":
-             console.log("forearm contract");
+             break;
+         case 3:
+             console.log("forearm contract".normalize());
              relayForearm.open();
-         case "forearm,1":
-             console.log("forearm contract");
+             break;
+         case 4:
+             console.log("forearm contract".normalize());
              relayForearm.close();
+             break;
          default:
-             console.log("invalid command");
+             console.log("invalid command " + tempMsg);
      }
   });
     

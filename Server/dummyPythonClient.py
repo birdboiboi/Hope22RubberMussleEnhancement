@@ -11,7 +11,7 @@ port = 8080
 # connect to the server on local computer
 s.connect(('10.0.0.29', port))
  
-data = "Hello Server!";
+data = "bicept0";
 
 s.send(data.encode());
 # receive data from the server and decoding to get the string.
