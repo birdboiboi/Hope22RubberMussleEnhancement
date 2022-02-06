@@ -6,13 +6,14 @@ board.on("ready", function() {
   var relay = new five.Relay(13);
 
   sensor.on("change", function () {
-    console.log(this.value);
+    
     var val = this.value;
     var previous = context.get("previous")
     if (val > 2*previous){
       relay.open()
       }
-    
+    context.set("previous", this.value)
+    console.log(this.value);
     });
       this.repl.inject({
           relay: relay
