@@ -6,7 +6,8 @@ var board = new five.Board();
 
 board.on("ready", function(){
     var relay = new five.Relay(13);
-    //var sensor = new five.Sensor("a0");
+    var sensor = new five.Sensor("a0");
+    
     console.log("toggle");
     relay.toggle();
     this.repl.inject({

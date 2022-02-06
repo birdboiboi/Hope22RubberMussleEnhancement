@@ -9,7 +9,7 @@ board.on("ready", function() {
     console.log(this.value);
     var val = this.value;
 
-    if (val > 100){
+    if (val > 500){
       relay.open()
       }else{
         relay.close()
