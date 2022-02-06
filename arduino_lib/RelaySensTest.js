@@ -10,8 +10,10 @@ board.on("ready", function() {
     var val = this.value;
 
     if (val > 200){
-      relay.close()
+      relay.open()
+      setTimeout(relay.close(),3000)
       }
+    
     });
       this.repl.inject({
           relay: relay
