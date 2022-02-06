@@ -9,8 +9,8 @@ board.on("ready", function() {
     console.log(this.value);
     var val = this.value;
 
-    if (val > 400){
-      relay.toggle()
+    if (val > 200){
+      relay.close()
       }
     
     });
