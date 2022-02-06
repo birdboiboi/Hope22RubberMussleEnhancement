@@ -8,15 +8,14 @@ board.on("ready", function() {
   sensor.on("change", function () {
     console.log(this.value);
     var val = this.value;
-
+    
     if (val > 200){
       relay.close()
     }
       else{
-        relay.open()
-      
+        setTimeout(()=> {relay.open();},5000);
       }
-    
+      
     
     });
       this.repl.inject({
