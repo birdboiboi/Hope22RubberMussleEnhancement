@@ -1,8 +1,8 @@
-const { Board, Sensor } = require("johnny-five")
+const { Board, five } = require("johnny-five")
 const board = new Board()
 
 board.on("ready", () => {
-  const sensor = new Sensor("A0")
+  const sensor = new five.Sensor("A0")
   const relay = new five.Relay(13);
 
   sensor.on("change", function () {
@@ -18,4 +18,4 @@ board.on("ready", () => {
           relay: relay
       });
     })
-  });
+  });f
