@@ -5,7 +5,7 @@ board.on("ready", function() {
   var sensor = new five.Sensor(
                                 {pin:"A0",
                                   threshold:50    })
-  var relay = new five.Relay(13);
+  var relay = new five.Relay(10);
   var setDelay = false;
   var open = false;
   sensor.on("change", function () {
