@@ -11,8 +11,6 @@ board.on("ready", function() {
 
     if (val > 200){
       relay.open()
-      }else{
-        relay.close()
       }
     });
       this.repl.inject({
