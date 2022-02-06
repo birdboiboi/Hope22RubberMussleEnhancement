@@ -14,3 +14,7 @@ The muscles were fastned with tape and zipties.
 The software is a node.js server using the Johnny-five dependacy to control a standard firmata arduino. The code can read an analog myo muscle sensor and output signals to a relay board that trigger pnumatic solinoids
 
 In addition an android app can be used to connect to the node.js server and manually control the air pressure outputs using tcp socket programing. Currently this only works on two devices on the same gateway(Pi on the phone's hotspot).
+
+How to use: 
+
+refining the process currently
