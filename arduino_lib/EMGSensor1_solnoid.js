@@ -23,6 +23,7 @@ board.on("ready", function(){
   sensorForearm.on("change", function () {
     console.log(this.value);
     var val = this.value;
+
     if (val > 100){
       liftRelay.toggle();
       if (state_lift == "up"){
@@ -30,11 +31,8 @@ board.on("ready", function(){
       }else{
         state_lift = "up";
       }
-
       console.log(state_lift)
-      
-      console.log("lift sensor ready")
-  }
+    }
   });
 
 
