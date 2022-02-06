@@ -16,7 +16,7 @@ board.on("ready", function() {
         open = true;
         relay.open();
       }else{
-        relay.close();
+        //relay.close();
         open = false;
       }
     });
@@ -29,7 +29,7 @@ board.on("ready", function() {
         },1500);
       }else{
         setInterval(() => {
-          relay.close();
+         // relay.close();
           console.log("close")
         },1500);
       }
