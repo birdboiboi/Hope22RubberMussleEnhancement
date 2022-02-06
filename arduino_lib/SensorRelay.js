@@ -12,12 +12,13 @@ board.on("ready", function() {
     console.log(this.value);
     var val = this.value;
 
-    if (val > 100){
+    if (val > 150){
         open = true;
         //relay.toggle();
+        relay.toggle();
       }else{
         //relay.close();
-        relay.toggle();
+        
         open = false;
       }
     });
