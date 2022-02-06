@@ -2,42 +2,43 @@ var five = require("johnny-five");
 var board = new five.Board();
 
 board.on("ready", function() {
-  var sensor = new five.Sensor(
-                                {pin:"A0",
-                                  threshold:200    })
-  var relay = new five.Relay(13);
-  var setDelay = false;
-  var open = false;
-  sensor.on("change", function () {
+  var sensor1 = new five.Sensor({
+    pin: "A0",
+    freq : 1000
+  });
+  var sensor2 = new five.Sensor({
+    pin: "A7",
+    freq : 1000
+  });
+  var relay1 = new five.Relay(13);
+  var relay2 = new five.Relay(12);
+
+  sensor1.on("change", function () {
     console.log(this.value);
     var val = this.value;
-
-    if (val > 100){
-        open = true;
-        relay.toggle();
-      }else{
-        //relay.close();
-        open = false;
-      }
-    });
-
-    if (setDelay){
-      if(open){
-        setInterval(() => {
-          relay.open();
-          console.log("open")
-        },1500);
-      }else{
-        setInterval(() => {
-         // relay.close();
-          console.log("close")
-        },1500);
-      }
-
+    if (val > 200){
+      relay1.close()
     }
+     else{
+      relay1.open()
+      
+    
+      }
 
+      sensor2.on("change", function () {
+        console.log(this.value);
+        var val = this.value;
+        if (val > 200){
+          relay2.close()
+        }
+         else{
+          relay2.open()
+          
+        
+          }
+    });
       this.repl.inject({
-          relay: relay
-     
+          relay: relay  
     })
   });
+});
