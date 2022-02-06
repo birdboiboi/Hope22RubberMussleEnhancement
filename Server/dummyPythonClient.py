@@ -9,8 +9,11 @@ s = socket.socket()
 port = 8080         
  
 # connect to the server on local computer
-s.connect(('192.168.53.48', port))
+s.connect(('10.0.0.29', port))
  
+data = "Hello Server!";
+
+s.send(data.encode());
 # receive data from the server and decoding to get the string.
 print (s.recv(1024).decode())
 # close the connection
