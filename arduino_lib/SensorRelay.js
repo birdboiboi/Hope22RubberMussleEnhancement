@@ -14,8 +14,9 @@ board.on("ready", function() {
       }else{
         relay.close()
       }
+    });
       this.repl.inject({
           relay: relay
-      });
+     
     })
   });
