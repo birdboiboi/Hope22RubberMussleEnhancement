@@ -10,7 +10,7 @@ board.on("ready", function() {
     var val = this.value;
 
     if (val > 200){
-      relay.toggle()
+      relay.close()
       }
     });
       this.repl.inject({
