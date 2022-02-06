@@ -3,7 +3,7 @@ var board = new five.Board();
 
 board.on("ready", function() {
   var sensor = new five.Sensor({
-    pin: "A0",
+    pin: "A1",
     freq : 2000
   });
   var relay = new five.Relay(10);
