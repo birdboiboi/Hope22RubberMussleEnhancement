@@ -13,8 +13,10 @@ board.on("ready", function() {
     var val = this.value;
 
     if (val > 300){
-      open = true;
+        open = true;
+        relay.open();
       }else{
+        relay.close();
         open = false;
       }
     });
