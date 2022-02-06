@@ -1,5 +1,5 @@
-const { Board, five } = require("johnny-five")
-const board = new Board()
+const five = require("johnny-five");
+const board = new five.Board();
 
 board.on("ready", () => {
   const sensor = new five.Sensor("A0")
