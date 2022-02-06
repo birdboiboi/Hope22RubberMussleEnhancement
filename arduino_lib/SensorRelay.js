@@ -10,9 +10,9 @@ board.on("ready", () => {
     var val = this.value;
 
     if (val > 100){
-      relay.on()
+      relay.open()
       }else{
-        relay.off()
+        relay.close()
       }
       this.repl.inject({
           relay: relay
