@@ -1,6 +1,11 @@
 var five = require("johnny-five");
-var board = new five.Board();
-
+var SerialPort = require("serialport").SerialPort;
+var five = require("johnny-five");
+var board = new five.Board({
+  port: "/dev/ttyACM0", 
+    baudrate: 9600,
+    buffersize: 1
+  });
 board.on("ready", function() {
   var sensor = new five.Sensor("A0")
   var relay = new five.Relay(13);
